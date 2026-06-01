@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 logs/
 data/raw/
+*.ipynb
+.ipynb_checkpoints/
