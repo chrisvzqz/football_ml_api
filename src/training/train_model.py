@@ -1,4 +1,3 @@
-from datetime import datetime
 from pathlib import Path
 
 import joblib
@@ -77,8 +76,7 @@ def run_training_pipeline(file_path=DATA_PATH):
 
     MODELS_DIR.mkdir(parents=True, exist_ok=True)
 
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    model_path = MODELS_DIR / f"logistic_regression_model_{timestamp}.joblib"
+    model_path = MODELS_DIR / "logistic_regression_model.joblib"
 
     joblib.dump(pipeline, model_path)
 
