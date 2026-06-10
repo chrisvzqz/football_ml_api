@@ -38,7 +38,7 @@ def build_pipeline():
         remainder="passthrough",
     )
 
-    model = LogisticRegression(max_iter=2000, random_state=42)
+    model = LogisticRegression(max_iter=1000, random_state=42)
 
     pipeline = Pipeline(
         steps=[
@@ -55,12 +55,17 @@ def run_training_pipeline(file_path=DATA_PATH):
 
     df = df.drop(columns=["utc_date"])
 
-    train_set, test_set = train_test_split(
-        df,
-        test_size=0.2,
-        stratify=df["winner"],
-        random_state=42,
-    )
+    # train_set, test_set = train_test_split(
+    #     df,
+    #     test_size=0.2,
+    #     stratify=df["winner"],
+    #     random_state=42,
+    # )
+
+    split_idx = int(len(df) * 0.8)
+
+    train_set = df.iloc[:split_idx]
+    test_set = df.iloc[split_idx:]
 
     X_train, y_train = split_features_target(train_set)
     X_test, y_test = split_features_target(test_set)
