@@ -1,5 +1,9 @@
 # Football Match Winner Prediction
 
+Machine Learning project for predicting football match outcomes using historical La Liga data. The project includes feature engineering, model training, a FastAPI prediction service, and Docker deployment.
+
+![FastAPI Swagger UI](image.png)
+
 ## Overview
 
 This project aims to predict the outcome of football matches in La Liga (Home Win, Draw, or Away Win) using historical match data and machine learning techniques.
